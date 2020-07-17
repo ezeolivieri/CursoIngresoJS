@@ -19,7 +19,7 @@ function sumar()
 	nro2Ingresado = parseInt(nro2Ingresado);
 
 	// Guardamos resultado de la suma
-	total =  nro1Ingresado + nro2Ingresado;
+	resultado =  nro1Ingresado + nro2Ingresado;
 
 	// Mostramos el resultado
 	alert("La suma es " + resultado);

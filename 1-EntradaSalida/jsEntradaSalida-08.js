@@ -11,8 +11,8 @@ function SacarResto()
 	var resultado;
 
 	// Asignacion de valores
-	dividendo = txtIdNumeroUno.value;
-	divisor = document.getElementById('txtIdNumeroDos')
+	dividendo = document.getElementById('txtIdNumeroDividendo').value;
+	divisor = document.getElementById('txtIdNumeroDivisor').value;
 	
 	// Parseo a Int
 	dividendo = parseInt(dividendo);

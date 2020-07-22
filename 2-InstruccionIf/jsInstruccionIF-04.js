@@ -1,7 +1,22 @@
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
 
+	// Defino la variable
+	var edadIngresada;
 
-}//FIN DE LA FUNCIÓN
+	// Asigno valor
+	edadIngresada = document.getElementById('txtIdEdad').value;
+
+	// Parseo a Entero
+	edadIngresada = parseInt(edadIngresada);
+
+	// Defino la condicion
+	if ( edadIngresada > 12 )
+	{
+		if ( edadIngresada < 18 )
+		{
+			alert("Sos adolescente");
+		}
+	}
+
+}

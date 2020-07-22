@@ -1,7 +1,20 @@
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
-	
+	 
+	// Defino variable
+	var edadIngresada;
 
-}//FIN DE LA FUNCIÓN
+	// Asigno valor
+	edadIngresada = document.getElementById('txtIdEdad').value;
+
+	// Parseo a Entero
+	edadIngresada = parseInt(edadIngresada);
+
+	// Defino la condicion
+	if ( edadIngresada > 17 )
+	{
+		// Muestreo de datos
+		alert("Sos mayor de edad");
+	}
+
+}

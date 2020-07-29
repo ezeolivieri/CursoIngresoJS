@@ -1,9 +1,35 @@
+// Olivieri Ezequiel
+// Ejercicio 1
+
 function mostrar()
 {
-	//tomo el mes
-	var mesDelAño =txtIdMes.value;
-	alert(mesDelAño);
 
+	// Defino variables
+	var mesSeleccionado;
 
+	// Asigno valores
+	mesSeleccionado =document.getElementById('txtIdMes').value;
+	
+	// Switcheo por casos
+	switch (mesSeleccionado) {
+		case "Enero":
+			alert("Que comiences bien el año!!!");
+			break;
 
-}//FIN DE LA FUNCIÓN
+		case "Marzo":
+			alert("A clases!!!!!!!!!!");
+			break;
+
+		case "Julio":
+			alert("Se vienen las vacaciones!!!");
+			break;
+
+		case "Diciembre":
+			alert("Felices fiestas!!!");
+			break;
+		default:
+			alert("Mes: " + mesSeleccionado);
+			break;
+	}
+
+}

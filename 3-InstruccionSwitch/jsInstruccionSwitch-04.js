@@ -1,11 +1,29 @@
+// Olivieri Ezequiel
+// Ejercicio 4
+
 function mostrar()
 {
-	//tomo el mes
-	var mesDelAño =txtIdMes.value;
-	alert(mesDelAño);
 	
+	// Defino variables
+	var mesSeleccionado;
+
+	// Asigno valores
+	mesSeleccionado = document.getElementById('txtIdMes').value;
 	
-
-
-
-}//FIN DE LA FUNCIÓN
+	// Switcheo los casos
+	switch (mesSeleccionado) {
+		case "Febrero":
+			alert(mesSeleccionado + " a veces tiene 28 dias, y a veces tiene 29 dias.");
+			break;
+		case "Abril":
+		case "Junio":
+		case "Septiembre":
+		case "Noviembre":
+			alert(mesSeleccionado + " tiene 30 dias");
+			break;
+		default:
+			alert(mesSeleccionado + " tiene 31 dias");
+			break;
+	}
+	
+}

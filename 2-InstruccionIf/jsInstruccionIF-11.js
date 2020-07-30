@@ -1,6 +1,6 @@
 // Olivieri Ezequiel
 
-// Ejercicio Agregado
+// Ejercicio Agregado (IF)
 /*
     Se pide ingresar una edad y un estado cicvil
 	1- a todos los mayores de edad, mostrar el mensaje "se responsable"

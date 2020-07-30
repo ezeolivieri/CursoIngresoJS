@@ -1,5 +1,5 @@
 // Olivieri Ezequiel
-// Ferrete Iluminación
+// Ferrete Iluminación (IF)
 
 /* Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.

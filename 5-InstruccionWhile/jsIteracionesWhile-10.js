@@ -1,3 +1,6 @@
+// Olivieri Ezequiel
+// Ejercicio 10
+
 /*
 Al presionar el botón pedir  números  
 hasta que el usuario quiera, mostrar:
@@ -10,20 +13,106 @@ hasta que el usuario quiera, mostrar:
 7-Promedio de positivos.
 8-Promedios de negativos.
 9-Diferencia entre positivos y negativos, (positvos-negativos). */
+
 function mostrar()
 {
-	//declarar contadores y variables 
+
+	// Declaro contadores y variables
 	var respuesta;
-	var numeroIngresado;
-	var sumaNegativos=0;
+	var nroIngresado;
+	var sumaNegativos;
+	var sumaPositivos;
+	var cantPositivos;
+	var cantNegativos;
+	var cantCeros;
+	var cantPares;
+	var promedioNegativos;
+	var promedioPositivos;
+	var difEntrePosNeg;
+	var tipoNumero;
 
+	// Asigno valores iniciales
 	respuesta="si";
+	sumaNegativos=0;
+	sumaPositivos=0;
+	cantCeros=0;
+	cantNegativos=0;
+	cantPositivos=0;
+	cantPares=0;
 
-	while(respuesta=="si")
+	// Iterador
+	while(respuesta!="no")
 	{
 		
-		respuesta=prompt("desea continuar?");
-	}//fin del while
+		// Pido, parseo y acumulo el nroIngresado
+		nroIngresado = prompt("Ingrese un numero");
+		nroIngresado = parseInt(nroIngresado);
 
-	document.write("la suma de negativos es :"+sumaNegativos);
-}//FIN DE LA FUNCIÓN
+		// Defino el tipo de numero
+		if (nroIngresado < 0)
+		{
+			tipoNumero = "negativo";
+		} 
+		else
+		{
+			if (nroIngresado > 0) 
+			{
+				tipoNumero = "positivo";
+			} 
+			else
+			{
+				tipoNumero = "cero"
+			}
+		}
+
+		// Switcheo por tipoNumero
+		switch (tipoNumero) {
+			case "positivo":
+				sumaPositivos += nroIngresado;
+				cantPositivos++;
+				// Condicion para numeros pares
+				if ((nroIngresado % 2) == 0)
+				{
+					cantPares++;
+				}
+				break;
+
+			case "negativo":
+				sumaNegativos += nroIngresado;
+				cantNegativos++;
+				// Condicion para numeros pares
+				if ((nroIngresado % 2) == 0)
+				{
+					cantPares++;
+				}
+				break;
+		
+			case "cero":
+				cantCeros++;
+				break;
+		}
+
+		// Condicion para continuar
+		respuesta=prompt("desea continuar?");
+
+	}
+
+	// Calculo promedio de positivos y negativos
+	promedioNegativos = sumaNegativos / cantNegativos;
+	promedioPositivos = sumaPositivos / cantPositivos;
+
+	// Calculo diferencia entre positivos y negativos
+	difEntrePosNeg = sumaPositivos - sumaNegativos;
+
+	// Muestreo de datos
+	document.writeln("La suma de negativos es: "+sumaNegativos+"<br>");
+	document.writeln("La suma de los positivos es: "+sumaPositivos+"<br>");
+	document.writeln("La cantidad de positivos es: "+cantPositivos+"<br>");
+	document.writeln("La cantidad de negativos es: "+cantNegativos+"<br>");
+	document.writeln("La cantidad de ceros es: "+cantCeros+"<br>");
+	document.writeln("La cantidad de numeros pares es: "+cantPares+"<br>");
+	document.writeln("El promedio de positivos es: "+promedioPositivos+"<br>");
+	document.writeln("El promedio de negativos es: "+promedioNegativos+"<br>");
+	document.writeln("Diferencia entre positivos y negativos: "+difEntrePosNeg+"<br>");
+
+}

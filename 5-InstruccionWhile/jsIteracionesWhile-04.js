@@ -18,16 +18,8 @@ function mostrar()
 	// Parseo a Entero
 	numeroIngresado = parseInt(numeroIngresado);
 
-	while ((numeroIngresado != 0) &&
-		  (numeroIngresado != 1) &&
-		  (numeroIngresado != 2) &&
-		  (numeroIngresado != 3) &&
-		  (numeroIngresado != 4) &&
-		  (numeroIngresado != 5) &&
-		  (numeroIngresado != 6) &&
-		  (numeroIngresado != 7) &&
-		  (numeroIngresado != 8) &&
-		  (numeroIngresado != 9) ) {
+	while ((numeroIngresado < 0) ||
+		  (numeroIngresado > 10) ) {
 
 		numeroIngresado = prompt("ERROR: ingrese un número entre 0 y 9.");
 	}

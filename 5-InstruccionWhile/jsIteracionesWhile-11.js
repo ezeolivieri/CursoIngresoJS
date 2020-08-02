@@ -43,6 +43,10 @@ function mostrar()
      // Nivel Dios
      var cantPersEdadMinima;
      var cantPersEdadMaxima;
+     var nomUltPer;
+     var edadUltPer;
+     var nomAnteUltPer;
+     var edadAnteUltPer;
      var nomUltPersMaxEdad;
      var nomUltPersMinEdad;
 
@@ -68,7 +72,7 @@ function mostrar()
      // Logica del programa
      while (continuar) {
 
-          // Actualizo bandera
+          // Actualizo banderas
           bandera++;
 
 
@@ -129,6 +133,7 @@ function mostrar()
           }
 
 
+
           // Inicializo las edades maximas y minimas
 		if(bandera == 1)
 		{
@@ -140,6 +145,8 @@ function mostrar()
                sexEdadMinima = sexoIngresado;
                cantPersEdadMinima++;
                cantPersEdadMaxima++;
+               nomUltPersMaxEdad = nombreIngresado;
+               nomUltPersMinEdad = nombreIngresado;
 		}
 		else
 		{
@@ -186,6 +193,22 @@ function mostrar()
           
           // Actualizo contadores
           totalIngresados++;
+
+          // Nombre y edad de ultima persona ingresada
+          if(totalIngresados == 1) 
+          {
+               nomUltPer = nombreIngresado;
+               edadUltPer = edadIngresada;
+               nomUltPersMaxEdad = nombreIngresado;
+               nomUltPersMinEdad = nombreIngresado;
+          }
+          else 
+          {
+               nomAnteUltPer = nomUltPer;
+               edadAnteUltPer = edadUltPer;
+               nomUltPer = nombreIngresado;
+               edadUltPer = edadIngresada;
+          }
           
           // Actualizo valor para luego sacar promedio
           sumaEdades+= edadIngresada;
@@ -193,6 +216,21 @@ function mostrar()
           // Condicion para continuar ingresando
           continuar = confirm("Desea continuar?");
 
+     }
+
+     // Calculo edades maximas y minimas entre las ultimas dos personas ingresadas
+     if (totalIngresados > 1) 
+     {
+          if (edadUltPer > edadAnteUltPer)
+          {
+               nomUltPersMaxEdad = nomUltPer;
+               nomUltPersMinEdad = nomAnteUltPer;
+          } 
+          else
+          {
+               nomUltPersMaxEdad = nomAnteUltPer;
+               nomUltPersMinEdad = nomUltPer;
+          }
      }
 
      // Calculo promedio de edades

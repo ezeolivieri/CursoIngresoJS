@@ -26,7 +26,6 @@ function mostrar()
 	var nomMasTemp;
 	var temperaturaMasAlta;
 	var cantMayViu;
-	var etapaDeVida;
 	var cantHomSolViu;
 	var persTerEdadConTemp;
 	var promEdadHomSolt;
